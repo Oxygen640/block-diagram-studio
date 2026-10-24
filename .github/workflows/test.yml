@@ -1,0 +1,36 @@
+name: tests
+
+# 只跑"纯 Node"的那几套测试：它们把 src/*.js 直接读进 vm 沙箱里跑，
+# 不依赖 Electron，也不需要 npm install，所以几十秒就能出结果、几乎不会抖。
+# 界面自检（ui-test / figure-test）要真实浏览器环境，这里不跑。
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: 引擎测试
+    runs-on: ubuntu-latest
+    steps:
+      - name: 取代码
+        uses: actions/checkout@v4
+
+      - name: 准备 Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 引擎逻辑（符号代数 / 化简 / 走线 / 方位优化）
+        run: node _test/core-test.cjs
+
+      - name: 化简途中每一步的展开式一致性
+        run: node _test/midstate-test.cjs
+
+      - name: 化简算子合法性审计
+        run: node _test/op-audit.cjs
+
+      - name: 例题三端到端回归
+        run: node _test/repro-user.cjs
