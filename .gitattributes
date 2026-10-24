@@ -10,6 +10,7 @@
 *.css   text eol=lf
 *.txt   text eol=lf
 *.py    text eol=lf
+*.yml   text eol=lf
 
 # 这几个没有扩展名，也必须显式声明，否则导出的归档里会变成 CRLF
 .gitattributes  text eol=lf
