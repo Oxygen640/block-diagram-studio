@@ -1,5 +1,9 @@
 # 方框图化简工作室
 
+[![tests](https://github.com/Oxygen640/block-diagram-studio/actions/workflows/test.yml/badge.svg)](https://github.com/Oxygen640/block-diagram-studio/actions/workflows/test.yml)
+[![release](https://img.shields.io/github/v/release/Oxygen640/block-diagram-studio?label=release)](https://github.com/Oxygen640/block-diagram-studio/releases)
+[![license](https://img.shields.io/github/license/Oxygen640/block-diagram-studio)](https://github.com/Oxygen640/block-diagram-studio/blob/main/LICENSE)
+
 > 面向《自动控制原理》「系统结构图的化简」一节的教学演示程序。
 > **重点是把"化简过程"演出来**：每一步做了什么、为什么这么做，都会记下来。
 
@@ -742,10 +746,16 @@ G2 / G2                        约分成   1
 ```
 block-diagram-studio/
 ├─ README.md               本文件
+├─ CHANGELOG.md            版本变更记录
+├─ LICENSE                 MIT
 ├─ 安装说明.txt             给朋友看的简短说明（打包时会自动复制进 dist）
 ├─ package.json            打包配置
 ├─ package-lock.json       依赖锁定
 ├─ .gitignore
+├─ .gitattributes          统一换行符（仓库里一律 LF）
+├─ .github/
+│   └─ workflows/
+│       └─ test.yml        持续集成：每次推送自动跑引擎测试
 ├─ electron/
 │   └─ main.js             主进程（创建窗口、单实例、外链处理）
 ├─ src/
@@ -832,3 +842,5 @@ npx electron _test\shot-layout.js   # 截图看排版有没有退化
 
 本程序为学习用途自制，代码可自由使用修改。
 界面图标为程序内用 Python(Pillow) 绘制生成。
+
+版本变更见 [CHANGELOG.md](CHANGELOG.md)。
