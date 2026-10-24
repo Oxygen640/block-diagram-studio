@@ -1,0 +1,22 @@
+# ---- 依赖（开发用，不上传） ----
+node_modules/
+
+# ---- 打包产物（由 npm run dist 生成，重新打包即可，不上传） ----
+dist/
+
+# ---- 测试临时产物 ----
+_test/shots/
+_test/*.txt
+_test/*.log
+
+# ---- 压缩包与日志 ----
+*.zip
+*.log
+
+# ---- 编辑器 / 系统杂项 ----
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.tmp
