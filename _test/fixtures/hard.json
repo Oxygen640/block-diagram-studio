@@ -1,0 +1,328 @@
+{
+  "app": "方框图化简工作室",
+  "version": 1,
+  "diagram": {
+    "blocks": [
+      {
+        "id": "b_20",
+        "type": "input",
+        "label": "R(s)",
+        "x": 80,
+        "y": 87,
+        "w": 66,
+        "h": 40,
+        "note": "",
+        "rat": {
+          "n": {
+            "R(s)": 1
+          },
+          "d": {
+            "": 1
+          }
+        }
+      },
+      {
+        "id": "b_21",
+        "type": "gain",
+        "label": "G1",
+        "x": 436,
+        "y": 80,
+        "w": 104,
+        "h": 54,
+        "note": "",
+        "rat": {
+          "n": {
+            "G1": 1
+          },
+          "d": {
+            "": 1
+          }
+        }
+      },
+      {
+        "id": "b_22",
+        "type": "gain",
+        "label": "H1",
+        "x": 436,
+        "y": 234,
+        "w": 104,
+        "h": 54,
+        "note": "",
+        "rat": {
+          "n": {
+            "H1": 1
+          },
+          "d": {
+            "": 1
+          }
+        },
+        "_want": 488
+      },
+      {
+        "id": "b_23",
+        "type": "gain",
+        "label": "G2",
+        "x": 830,
+        "y": 80,
+        "w": 104,
+        "h": 54,
+        "note": "",
+        "rat": {
+          "n": {
+            "G2": 1
+          },
+          "d": {
+            "": 1
+          }
+        }
+      },
+      {
+        "id": "b_24",
+        "type": "gain",
+        "label": "H2",
+        "x": 830,
+        "y": 234,
+        "w": 104,
+        "h": 54,
+        "note": "",
+        "rat": {
+          "n": {
+            "H2": 1
+          },
+          "d": {
+            "": 1
+          }
+        },
+        "_want": 882
+      },
+      {
+        "id": "b_25",
+        "type": "gain",
+        "label": "G3",
+        "x": 1224,
+        "y": 80,
+        "w": 104,
+        "h": 54,
+        "note": "",
+        "rat": {
+          "n": {
+            "G3": 1
+          },
+          "d": {
+            "": 1
+          }
+        }
+      },
+      {
+        "id": "b_26",
+        "type": "gain",
+        "label": "H3",
+        "x": 1126,
+        "y": 234,
+        "w": 104,
+        "h": 54,
+        "note": "",
+        "rat": {
+          "n": {
+            "H3": 1
+          },
+          "d": {
+            "": 1
+          }
+        },
+        "_want": 1177.5
+      },
+      {
+        "id": "b_27",
+        "type": "output",
+        "label": "C(s)",
+        "x": 1448,
+        "y": 87,
+        "w": 66,
+        "h": 40,
+        "note": "",
+        "rat": {
+          "n": {
+            "C(s)": 1
+          },
+          "d": {
+            "": 1
+          }
+        }
+      },
+      {
+        "id": "b_29",
+        "type": "sum",
+        "label": "",
+        "x": 266,
+        "y": 82,
+        "w": 50,
+        "h": 50,
+        "note": "",
+        "rat": {
+          "n": {
+            "": 1
+          },
+          "d": {
+            "": 1
+          }
+        }
+      },
+      {
+        "id": "b_30",
+        "type": "sum",
+        "label": "",
+        "x": 660,
+        "y": 82,
+        "w": 50,
+        "h": 50,
+        "note": "",
+        "rat": {
+          "n": {
+            "": 1
+          },
+          "d": {
+            "": 1
+          }
+        }
+      },
+      {
+        "id": "b_31",
+        "type": "sum",
+        "label": "",
+        "x": 1054,
+        "y": 82,
+        "w": 50,
+        "h": 50,
+        "note": "",
+        "rat": {
+          "n": {
+            "": 1
+          },
+          "d": {
+            "": 1
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e_32",
+        "from": "b_20",
+        "to": "b_29",
+        "sign": "+",
+        "fromSide": "right",
+        "toSide": "left",
+        "route": null
+      },
+      {
+        "id": "e_33",
+        "from": "b_22",
+        "to": "b_29",
+        "sign": "-",
+        "fromSide": "left",
+        "toSide": "bottom",
+        "route": null
+      },
+      {
+        "id": "e_34",
+        "from": "b_29",
+        "to": "b_21",
+        "sign": "+",
+        "fromSide": "right",
+        "toSide": "left",
+        "route": null
+      },
+      {
+        "id": "e_35",
+        "from": "b_21",
+        "to": "b_30",
+        "sign": "+",
+        "fromSide": "right",
+        "toSide": "left",
+        "route": null
+      },
+      {
+        "id": "e_36",
+        "from": "b_24",
+        "to": "b_30",
+        "sign": "-",
+        "fromSide": "left",
+        "toSide": "bottom",
+        "route": null
+      },
+      {
+        "id": "e_37",
+        "from": "b_30",
+        "to": "b_22",
+        "sign": "+",
+        "fromSide": "bottom",
+        "toSide": "right",
+        "route": null
+      },
+      {
+        "id": "e_38",
+        "from": "b_30",
+        "to": "b_23",
+        "sign": "+",
+        "fromSide": "right",
+        "toSide": "left",
+        "route": null
+      },
+      {
+        "id": "e_39",
+        "from": "b_23",
+        "to": "b_31",
+        "sign": "+",
+        "fromSide": "right",
+        "toSide": "left",
+        "route": null
+      },
+      {
+        "id": "e_40",
+        "from": "b_31",
+        "to": "b_24",
+        "sign": "+",
+        "fromSide": "bottom",
+        "toSide": "right",
+        "route": null
+      },
+      {
+        "id": "e_41",
+        "from": "b_31",
+        "to": "b_25",
+        "sign": "+",
+        "fromSide": "right",
+        "toSide": "left",
+        "route": null
+      },
+      {
+        "id": "e_42",
+        "from": "b_26",
+        "to": "b_31",
+        "sign": "-",
+        "fromSide": "left",
+        "toSide": "bottom",
+        "route": null
+      },
+      {
+        "id": "e_43",
+        "from": "b_25",
+        "to": "b_27",
+        "sign": "+",
+        "fromSide": "right",
+        "toSide": "left",
+        "route": null
+      },
+      {
+        "id": "e_44",
+        "from": "b_25",
+        "to": "b_26",
+        "sign": "+",
+        "fromSide": "bottom",
+        "toSide": "right",
+        "route": null
+      }
+    ]
+  }
+}

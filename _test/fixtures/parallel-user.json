@@ -1,0 +1,189 @@
+{
+  "name": "例题三：并联＋反馈",
+  "diagram": {
+    "blocks": [
+      {
+        "id": "b_1",
+        "type": "input",
+        "label": "R(s)",
+        "x": 40,
+        "y": 200,
+        "w": 66,
+        "h": 40,
+        "note": ""
+      },
+      {
+        "id": "b_2",
+        "type": "takeoff",
+        "label": "",
+        "x": 150,
+        "y": 200,
+        "w": 18,
+        "h": 18,
+        "note": ""
+      },
+      {
+        "id": "b_3",
+        "type": "gain",
+        "label": "G1",
+        "x": 280,
+        "y": 140,
+        "w": 104,
+        "h": 54,
+        "note": ""
+      },
+      {
+        "id": "b_4",
+        "type": "sum",
+        "label": "",
+        "x": 200,
+        "y": 300,
+        "w": 50,
+        "h": 50,
+        "note": ""
+      },
+      {
+        "id": "b_5",
+        "type": "gain",
+        "label": "G2",
+        "x": 360,
+        "y": 292,
+        "w": 104,
+        "h": 54,
+        "note": ""
+      },
+      {
+        "id": "b_6",
+        "type": "sum",
+        "label": "",
+        "x": 500,
+        "y": 200,
+        "w": 50,
+        "h": 50,
+        "note": ""
+      },
+      {
+        "id": "b_7",
+        "type": "takeoff",
+        "label": "",
+        "x": 620,
+        "y": 200,
+        "w": 18,
+        "h": 18,
+        "note": ""
+      },
+      {
+        "id": "b_8",
+        "type": "gain",
+        "label": "G3",
+        "x": 440,
+        "y": 400,
+        "w": 104,
+        "h": 54,
+        "note": ""
+      },
+      {
+        "id": "b_9",
+        "type": "output",
+        "label": "C(s)",
+        "x": 760,
+        "y": 200,
+        "w": 66,
+        "h": 40,
+        "note": ""
+      }
+    ],
+    "edges": [
+      {
+        "id": "e_10",
+        "from": "b_1",
+        "to": "b_2",
+        "sign": "+",
+        "fromSide": "right",
+        "toSide": "left",
+        "route": null
+      },
+      {
+        "id": "e_11",
+        "from": "b_2",
+        "to": "b_3",
+        "sign": "+",
+        "fromSide": "right",
+        "toSide": "left",
+        "route": null
+      },
+      {
+        "id": "e_12",
+        "from": "b_2",
+        "to": "b_4",
+        "sign": "+",
+        "fromSide": "bottom",
+        "toSide": "top",
+        "route": null
+      },
+      {
+        "id": "e_13",
+        "from": "b_4",
+        "to": "b_5",
+        "sign": "+",
+        "fromSide": "right",
+        "toSide": "left",
+        "route": null
+      },
+      {
+        "id": "e_14",
+        "from": "b_3",
+        "to": "b_6",
+        "sign": "+",
+        "fromSide": "right",
+        "toSide": "left",
+        "route": null
+      },
+      {
+        "id": "e_15",
+        "from": "b_5",
+        "to": "b_6",
+        "sign": "+",
+        "fromSide": "top",
+        "toSide": "left",
+        "route": null
+      },
+      {
+        "id": "e_16",
+        "from": "b_6",
+        "to": "b_7",
+        "sign": "+",
+        "fromSide": "right",
+        "toSide": "left",
+        "route": null
+      },
+      {
+        "id": "e_17",
+        "from": "b_7",
+        "to": "b_9",
+        "sign": "+",
+        "fromSide": "right",
+        "toSide": "left",
+        "route": null
+      },
+      {
+        "id": "e_18",
+        "from": "b_7",
+        "to": "b_8",
+        "sign": "+",
+        "fromSide": "bottom",
+        "toSide": "top",
+        "route": null
+      },
+      {
+        "id": "e_19",
+        "from": "b_8",
+        "to": "b_4",
+        "sign": "-",
+        "fromSide": "left",
+        "toSide": "right",
+        "route": null
+      }
+    ]
+  }
+}

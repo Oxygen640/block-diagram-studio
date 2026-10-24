@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+  <title>方框图化简工作室</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">方框图化简工作室 <small>自动控制原理 · 结构图化简过程演示</small></div>
+
+  <div class="sep"></div>
+  <select class="btn" id="demoSel" title="载入内置例题">
+    <option value="">载入例题…</option>
+    <option value="twoLoop">例题一：双环反馈系统</option>
+    <option value="needMove">例题二：需要移动引出点</option>
+    <option value="parallel">例题三：并联＋反馈（要合并相加点）</option>
+    <option value="blank">空白画布</option>
+  </select>
+
+  <div class="sep"></div>
+  <button class="btn" id="btnOpen" title="打开之前保存的图纸(.json)">📂 打开</button>
+  <button class="btn" id="btnSave" title="把当前图纸保存成 .json 文件">💾 保存</button>
+
+  <div class="sep"></div>
+  <button class="btn" id="btnUndo" title="撤销上一步 (Ctrl+Z)">↶ 撤销</button>
+  <button class="btn" id="btnRedo" title="重做 (Ctrl+Y)">↷ 重做</button>
+  <button class="btn ghost" id="btnReset" title="回到最初的结构图">⟲ 重置</button>
+
+  <div class="sep"></div>
+  <button class="btn primary" id="btnAuto" title="自动推导出完整的化简步骤">⚡ 自动化简</button>
+  <button class="btn" id="btnWire" title="清除手工走线，自动为每条线选择最合理的端口方位">✦ 自动理线</button>
+  <button class="btn" id="btnLayout" title="按信号流向重新排列元件位置，让整张图整齐">▦ 自动排版</button>
+
+  <div class="spacer"></div>
+
+  <button class="btn" id="btnCopy" title="把化简过程复制到剪贴板，可直接粘贴进作业">📋 复制过程</button>
+  <button class="btn ghost" id="btnHelp" title="使用说明">? 帮助</button>
+</header>
+
+<main>
+  <div id="canvas-wrap">
+    <div id="tools">
+      <div class="t">添加元件</div>
+      <button data-add="input">▭ 输入信号</button>
+      <button data-add="gain">▭ 环节（方框）</button>
+      <button data-add="sum">◯ 相加点</button>
+      <button data-add="takeoff">• 引出点</button>
+      <button data-add="output">▭ 输出信号</button>
+    </div>
+
+    <div id="canvas">
+      <svg id="wires"></svg>
+      <div id="blocks"></div>
+    </div>
+
+    <div id="viewbar">
+      <button id="zoomOut" title="缩小 (Ctrl+-)">−</button>
+      <span id="zoomLabel" title="当前缩放比例">100%</span>
+      <button id="zoomIn" title="放大 (Ctrl+=)">＋</button>
+      <button id="zoomFit" title="适应窗口 (Ctrl+0)">适应</button>
+      <span class="hintmini">中键拖动 / 滚轮缩放</span>
+    </div>
+
+    <div id="tip"></div>
+  </div>
+
+  <aside>
+    <div class="tabs">
+      <div class="tab active" data-tab="ops">可执行操作 <span class="badge" id="opBadge">0</span></div>
+      <div class="tab" data-tab="steps">化简步骤</div>
+      <div class="tab" data-tab="mason">结果与验证</div>
+    </div>
+
+    <div class="panes">
+      <div class="pane active" id="pane-ops"></div>
+      <div class="pane" id="pane-steps"></div>
+      <div class="pane" id="pane-mason"></div>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <span id="stRemain">—</span>
+  <span id="stSel">未选中元件</span>
+  <span class="spacer" style="flex:1"></span>
+  <span>双击方框改名 ｜ 拖方块上蓝点连线 ｜ <b>拖动连线可调整走线</b> ｜ 双击连线恢复自动走线 ｜ 右键菜单</span>
+</footer>
+
+<div id="ctxmenu"></div>
+
+<div id="modal">
+  <div class="box">
+    <h3 id="mdTitle">提示</h3>
+    <div id="mdBody"></div>
+    <div class="row">
+      <button class="btn" id="mdCancel">取消</button>
+      <button class="btn ok" id="mdOk">确定</button>
+    </div>
+  </div>
+</div>
+
+<script src="rat.js"></script>
+<script src="latex.js"></script>
+<script src="model.js"></script>
+<script src="router.js"></script>
+<script src="engine.js"></script>
+<script src="mason.js"></script>
+<script src="verify.js"></script>
+<script src="planner.js"></script>
+<script src="ui.js"></script>
+</body>
+</html>

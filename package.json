@@ -1,0 +1,54 @@
+{
+  "name": "block-diagram-studio",
+  "version": "1.0.0",
+  "description": "方框图化简工作室 - 自动控制原理结构图化简过程演示",
+  "main": "electron/main.js",
+  "author": "Block Diagram Studio",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis && node build/post-dist.js",
+    "dist-portable": "electron-builder --win portable && node build/post-dist.js",
+    "test": "node _test/core-test.cjs",
+    "test-ui": "electron _test/ui-test.js",
+    "test-plans": "electron _test/figure-test.js",
+    "test-audit": "node _test/op-audit.cjs",
+    "test-mid": "node _test/midstate-test.cjs",
+    "test-layout": "electron _test/layout-sweep.cjs",
+    "shots": "electron _test/shots.js"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.studio.blockdiagram",
+    "productName": "BlockDiagramStudio",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "electron/**/*",
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "artifactName": "方框图化简工作室-安装包-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "方框图化简工作室",
+      "installerLanguages": ["zh_CN"],
+      "language": "2052"
+    }
+  }
+}
