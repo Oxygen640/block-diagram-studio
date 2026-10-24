@@ -1,0 +1,22 @@
+# 统一换行符：仓库里一律存 LF，检出时按各平台习惯转换
+* text=auto
+
+# 源码与文档用 LF
+*.js    text eol=lf
+*.cjs   text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.html  text eol=lf
+*.css   text eol=lf
+*.txt   text eol=lf
+*.py    text eol=lf
+
+# 这几个没有扩展名，也必须显式声明，否则导出的归档里会变成 CRLF
+.gitattributes  text eol=lf
+.gitignore      text eol=lf
+LICENSE         text eol=lf
+
+# 二进制
+*.png   binary
+*.ico   binary
+*.exe   binary
